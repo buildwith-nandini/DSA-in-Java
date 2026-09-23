@@ -1,0 +1,10 @@
+while(arr.length>1){
+           Node a = arr.get(arr.length-1);
+           arr.remove(arr.length-1);
+          Node b = arr.get(arr.length-1);
+           arr.remove(arr.length-1);
+           Node c = merge(a,b);
+           arr.add(c);
+      }
+    return arr.get(0);
+}
