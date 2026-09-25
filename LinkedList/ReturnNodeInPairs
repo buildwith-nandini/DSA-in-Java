@@ -1,0 +1,29 @@
+class Solution {
+    public Pair<Node, Node> splitList(Node head) {
+        Node temp = head;
+        while(temp.next!=head){
+            temp = temp.next;
+        }
+        temp.next = null;
+        
+        int length = 0;
+        while(temp.next!=null){
+            temp = temp.next;
+            length++;
+        }
+        Node slow = head;
+        Node fast = head;
+        while(fast.next!=null && fast.next.next != null ){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node a = slow.next;
+        // slow.next = a;
+        slow.next = head;
+        temp.next = a;
+        
+       return new Pair<>(head, a);
+    }
+}
+
+// return new Pair<>(val1,val2)
