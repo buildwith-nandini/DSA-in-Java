@@ -1,0 +1,7 @@
+how to add elements from heap into array
+
+int i = 0;
+while (!pq.isEmpty()) {
+    arr[i] = pq.poll();
+    i++;
+}
